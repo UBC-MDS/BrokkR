@@ -3,10 +3,10 @@
 #'
 #' @param df a data frame with the last column of raw text
 #'
-#' @retrun a data frame which consists of the n-1 first columns of the input data frame as its n-1 first columns,
+#' @return a data frame which consists of the n-1 first columns of the input data frame as its n-1 first columns,
 #'         plus a bag of words out the input data frame in its following numerous columns.
 #'
-#' @example
+#' @examples
 #' df <- data.frame(
 #'     url = c("https://www.cnn.com/world",
 #'             "https://www.foxnews.com/world",
@@ -30,8 +30,8 @@
 #'    0        0       0    ...     0       1        1
 #'    1        0       0    ...     0       0        0
 #'    0        1       1    ...     1       0        0
-    """
 
-#bow <- funtion(df) {
+
+bow <- function(df) {
 # the code comes here ...
-#}
+}
