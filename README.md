@@ -13,16 +13,38 @@ Users also have the option to produce a dataframe with just the raw text
 of their target webpages to apply the text representation of their
 choice instead.
 
-# Features
-The BrokkR package includes the following four functions:
+## Why `BrokkR`
 
-- `create_id()`: Takes a list of webpage urls formatted as strings as an input and returns a list of unique string identifiers for each webpage based on their url. The identifier is composed of the main webpage name followed by a number.
+There are some libraries and packages that can facilitate this job, from
+scraping text from a URL to returning it to a bag of words (BOW).
+However, to the extent of our knowledge, there is no sufficiently handy
+and straightforward package for this purpose. This package is a tailored
+combination of `Rvest` and `CountVectorizer`.
+[`Rvest`](https://www.rdocumentation.org/packages/rvest/versions/0.3.6)
+widely used to pull different sources of data from HTML and XML pages,
+and
+[`CountVectorizer`](https://www.rdocumentation.org/packages/superml/versions/0.4.0/topics/CountVectorizer)
+is a well-known package to convert a collection of texts to a matrix of
+token counts.
 
-- `text_from_url()` : Takes a list of urls and using Beautiful Soup extracts the raw text from each and creates a dataframe. By setting the optional argument identifier it can use the function create_id() from this package to add an id column that stores the identifiers for each url.
+## Features
 
-- `bow()`: Takes a string text as an input and returns the list of unique words it contains.
+The pymine package includes the following four functions:
 
-- `count_words()`: Counts the occurrence of a specific list of words on a series of webpages and produces a Pandas dataframe with the results. The user will provide a list of urls to scrape and a list of target words they are interested in.
+-   `create_id()`: Takes a vector of webpage urls formatted as strings
+    as an input and returns a vector of unique string identifiers for
+    each webpage based on their url. The identifier is composed of the
+    main webpage name followed by a number.
+-   `text_from_url()` : Takes a vector of urls and using Rvest extracts
+    the raw text from each and creates a dictionary. The keys contain
+    the original URL and the values contain the raw text output as
+    parsed by Rvest.
+-   `duster()`: Takes a vector of urls and uses the above two functions
+    to create a tibble with the webpage identifiers as a index, the raw
+    url, and the raw text from the webpage with extra line breaks
+    removed.
+-   `bow()`: Takes a string text as an input and returns the vector of
+    unique words it contains.
 
 ## Installation
 
