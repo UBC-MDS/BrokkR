@@ -20,6 +20,11 @@ knitr::opts_chunk$set(
 
 This package allows users to provide a list of URLs for webpages of interest and creates a dataframe with Bag of Words representation that can then later be fed into a machine learning model of their choice. Users also have the option to produce a dataframe with just the raw text of their target webpages to apply the text representation of their choice instead.
 
+## Why `BrokkR`
+
+There are some libraries and packages that can facilitate this job, from scraping text from a URL to returning it to a bag of words (BOW). However, to the extent of our knowledge, there is no sufficiently handy and straightforward package for this purpose. This package is a tailored combination of `Rvest` and `CountVectorizer`. [`Rvest`](https://www.rdocumentation.org/packages/rvest/versions/0.3.6) widely used to pull different sources of data from HTML and XML pages, and [`CountVectorizer`](https://www.rdocumentation.org/packages/superml/versions/0.4.0/topics/CountVectorizer) is a well-known package to convert a collection of texts to a matrix of token counts.
+
+
 ## Features
 
 The pymine package includes the following four functions:
