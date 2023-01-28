@@ -11,7 +11,7 @@
 #' 
 #' brok_scrape(['https://realpython.github.io/fake-jobs/jobs/energy-engineer-1.html', 'https://realpython.github.io/fake-jobs/jobs/materials-engineer-24.html'])
 #' 
-#'                            url
+#'                            url                                                                        text
 #' https://realpython.github.io/fake-jobs/jobs/energy-engineer-1.html       | Fake Python Fake Jobs for Your Web Scraping Journey Energy engineer Vasquez-Davidson Party prevent live. Quickly candidate change although. Together type music hospital. Every speech support time operation wear often. Location: Christopherville, AA Posted: 2021-04-08
 #' https://realpython.github.io/fake-jobs/jobs/materials-engineer-24.html   | Fake Python Fake Jobs for Your Web Scraping Journey Materials engineer Davis, Serrano and Cook Approach great top series public none. Include air sort couple hold group but. Again identify real to follow so. Live teach movie I situation understand agree. Location: South Tammyberg, AP Posted: 2021-04-08
  
