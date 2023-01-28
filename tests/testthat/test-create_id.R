@@ -1,5 +1,10 @@
 #' Unit tests for create_id() function of BrokkR
 
+#' Toy dataset
+urls <- c('https://www.reddit.com/r/nba/', 'https://www.reddit.com/r/nfl/', 'https://vancouver.craigslist.org/search/apa', 'https://www.kaggle.com/search?q=nba')
+expected <- c('reddit', 'reddit.1', 'craigslist', 'kaggle')
+actual = create_id(urls)
+
 #' Confirms the input is a character vector
 test_that("input is a character vector", {
   expect_type(urls, "character")
