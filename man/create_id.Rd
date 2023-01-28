@@ -7,16 +7,16 @@
 create_id(urls)
 }
 \arguments{
-\item{urls}{A vector of urls as strings.}
+\item{urls}{A character vector of urls.}
 }
 \value{
-A vector of unique identifiers as strings.
+A character vector of unique identifiers.
 }
 \description{
-Convert a vector of provided urls into a vector of unique identifiers for use in downstream functions.
+Convert a character vector of provided urls into a character vector of unique identifiers for use in downstream functions.
 }
 \examples{
-urls <- c('https://www.reddit.com/r/nba/', 'https://www.reddit.com/r/nfl/', 'https://vancouver.craigslist.org/search/apa', 'https://www.kijiji.ca/b-real-estate/richmond-bc/c34l1700288')
+urls <- c('https://www.reddit.com/r/nba/', 'https://www.reddit.com/r/nfl/', 'https://vancouver.craigslist.org/search/apa', 'https://www.kaggle.com/search?q=nba')
 create_id(urls)
-[1] 'reddit1'  'reddit2'  'craigslist1'  'kijiji1'
+[1] 'reddit'  'reddit.1'  'craigslist'  'kaggle'
 }
