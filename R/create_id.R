@@ -12,5 +12,12 @@
 #' create_id(urls)
 #' [1] 'reddit1'  'reddit2'  'craigslist1'  'kijiji1'
 create_id <- function(urls){
-  #code to be written
+  ids <- c()
+  for (url in urls) {
+    website_split <- unlist(strsplit(url, "\\."))
+    website_name <- website_split[2]
+    ids <- c(ids, website_name)
+  }
+  ids <- make.unique(ids)
+  ids
 }
