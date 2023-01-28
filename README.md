@@ -20,7 +20,7 @@ scraping text from a URL to returning it to a bag of words (BOW).
 However, to the extent of our knowledge, there is no sufficiently handy
 and straightforward package for this purpose. This package is a tailored
 combination of `Rvest` and `CountVectorizer`.
-[`Rvest`](https://www.rdocumentation.org/packages/rvest/versions/0.3.6)
+[`Rvest`](https://www.rdocumentation.org/packages/rvest/versions/1.0.3)
 widely used to pull different sources of data from HTML and XML pages,
 and
 [`CountVectorizer`](https://www.rdocumentation.org/packages/superml/versions/0.4.0/topics/CountVectorizer)
@@ -31,20 +31,20 @@ token counts.
 
 The pymine package includes the following four functions:
 
--   `create_id()`: Takes a vector of webpage urls formatted as strings
-    as an input and returns a vector of unique string identifiers for
-    each webpage based on their url. The identifier is composed of the
-    main webpage name followed by a number.
--   `text_from_url()` : Takes a vector of urls and using Rvest extracts
-    the raw text from each and creates a dictionary. The keys contain
-    the original URL and the values contain the raw text output as
-    parsed by Rvest.
--   `duster()`: Takes a vector of urls and uses the above two functions
-    to create a tibble with the webpage identifiers as a index, the raw
-    url, and the raw text from the webpage with extra line breaks
-    removed.
--   `bow()`: Takes a string text as an input and returns the vector of
-    unique words it contains.
+- `create_id()`: Takes a character vector of webpage urls as an input
+  and returns a character vector of unique identifiers for each webpage
+  based on their url. The identifier is composed of the main webpage
+  name and if multiple urls share the same parent webpage name, then the
+  sequential ids are appended by a number.
+- `text_from_url()` : Takes a vector of urls and using Rvest extracts
+  the raw text from each and creates a dictionary. The keys contain the
+  original URL and the values contain the raw text output as parsed by
+  Rvest.
+- `duster()`: Takes a vector of urls and uses the above two functions to
+  create a tibble with the webpage identifiers as a index, the raw url,
+  and the raw text from the webpage with extra line breaks removed.
+- `bow()`: Takes a string text as an input and returns the vector of
+  unique words it contains.
 
 ## Installation
 
