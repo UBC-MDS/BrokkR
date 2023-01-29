@@ -18,4 +18,5 @@ Imports:
     rvest,
     stringr,
     superml,
-    testthat
+    testthat,
+    tibble
