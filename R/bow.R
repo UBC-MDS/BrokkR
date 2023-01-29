@@ -37,7 +37,7 @@
 library("superml")
 
 bow <- function(df) {
-  words <- CountVectorizer$new()
+  words <- superml::CountVectorizer$new()
   words_matrix <- words$fit_transform(df[ , ncol(df)])
   new_order <- sort(colnames(words_matrix))
   df_temp <- words_matrix[, new_order]
