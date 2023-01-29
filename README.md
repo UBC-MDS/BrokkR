@@ -36,10 +36,9 @@ The pymine package includes the following four functions:
   based on their url. The identifier is composed of the main webpage
   name and if multiple urls share the same parent webpage name, then the
   sequential ids are appended by a number.
-- `text_from_url()` : Takes a vector of urls and using Rvest extracts
-  the raw text from each and creates a dictionary. The keys contain the
-  original URL and the values contain the raw text output as parsed by
-  Rvest.
+- `brok_scrape()` : Takes a vector of urls and using Rvest extracts the 
+  raw text from each and creates a list as an output. Polite was used to 
+  avoid being flagged as malicious during the scraping process.
 - `duster()`: Takes a vector of urls and uses the above two functions to
   create a tibble with the webpage identifiers as a index, the raw url,
   and the raw text from the webpage with extra line breaks removed.
