@@ -12,10 +12,12 @@
 #'             "https://www.foxnews.com/world",
 #'             "https://www.cbc.ca/news/world"),
 #'     url_id = c("cnn1","foxnews1","cbc1"),
-#'     text = c("Instagram has a faster chance of reaching me than CNN, and if I really want to know what's going on, I refresh my Twitter feed.",
+#'     text = c("Instagram has a faster chance of reaching me than CNN",
 #'              "I would appear on Fox News more easily than I would NPR.",
-#'              "CBC has a very important mandate to bind Canada together in both official languages, tell local stories, and make sure we have a sense of our strength, our culture, our stories.")
-#'          )
+#'              "CBC has a very important mandate to bind Canada together
+#'              in both official languages, tell local stories, and make
+#'              sure we have a sense of our strength, our culture, our stories."))
+#'
 #'  bow(df)
 #'  ===============================  ==========  ==============================
 #'              url                    url_id             text
