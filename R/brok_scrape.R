@@ -16,16 +16,18 @@
 #' https://realpython.github.io/fake-jobs/jobs/materials-engineer-24.html   | Fake Python Fake Jobs for Your Web Scraping Journey Materials engineer Davis, Serrano and Cook Approach great top series public none. Include air sort couple hold group but. Again identify real to follow so. Live teach movie I situation understand agree. Location: South Tammyberg, AP Posted: 2021-04-08
  
 library(rvest)
-
-df = data.frame(, names(c('url', 'text')))
-
-df
+library(polite)
+library(testthat)
 
 brok_scrape <- function(urls){
+  alligator <- list()
   for (i in urls) {
-    alligator <- read_html(i)
-    df[nrow(df) + 1, ] = c(i, alligator) 
+    wp <- bow(i, force = TRUE)
+    test_that('The webpage is not returning text', {expect_true(typeof(wp) == 'list')})
+    scr_wp <- scrape(wp) |>
+      html_text()
+    alligator <- append(alligator, scr_wp)
   }
-return(df)
+  return(alligator)
+  test_that('The output is not a character vector', {expect_true(typeof(alligator) == 'character')})
 }
-
