@@ -7,11 +7,11 @@ test_that("the row number of both output and input data frames should be the sam
 })
 
 test_that("the first m-1 columns of input and output data frames should be the same", {
-  identical(bow(df)[,1:ncol(df)-1] , df[,1:ncol(df)-1])
+  expect_equal(bow(df)[,1:ncol(df)-1] , df[,1:ncol(df)-1])
 })
 
 test_that("The output is not as expected!", {
-  identical(bow(data.frame(
+  expect_equal(bow(data.frame(
     url = c("https://www.cnn.com/world",
             "https://www.foxnews.com/world",
             "https://www.cbc.ca/news/world"),
