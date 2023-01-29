@@ -1,3 +1,18 @@
+# toy data set
+df = data.frame(
+  url = c("https://www.cnn.com/world",
+          "https://www.foxnews.com/world",
+          "https://www.cbc.ca/news/world"),
+  url_id = c("cnn1","foxnews1","cbc1"),
+  text = c("Instagram has a faster chance of reaching me than CNN, and if I really want to know what's going on, I refresh my Twitter feed.",
+           "I would appear on Fox News more easily than I would NPR.",
+           "CBC has a very important mandate to bind Canada together in both official languages, tell local stories, and make sure we have a sense of our strength, our culture, our stories.")
+)
+
+actual = bow(df)
+
+
+# unit tests
 test_that("last column of the input data frame should be string", {
   expect_equal(typeof(df[,ncol(df)]), "character")
 })
@@ -7,11 +22,11 @@ test_that("the row number of both output and input data frames should be the sam
 })
 
 test_that("the first m-1 columns of input and output data frames should be the same", {
-  identical(bow(df)[,1:ncol(df)-1] , df[,1:ncol(df)-1])
+  expect_equal(bow(df)[,1:ncol(df)-1] , df[,1:ncol(df)-1])
 })
 
 test_that("The output is not as expected!", {
-  identical(bow(data.frame(
+  expect_equal(bow(data.frame(
     url = c("https://www.cnn.com/world",
             "https://www.foxnews.com/world",
             "https://www.cbc.ca/news/world"),
