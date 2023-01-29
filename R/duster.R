@@ -15,7 +15,14 @@
 #' foxnews1  https://www.foxnews.com/world  World | Fox NewsFox News   U.S.PoliticsMediaOp...
 #' cbc1      https://www.cbc.ca/news/world  World - CBC NewsContentSkip to Main ContentAcc...
 
-duster <- function(urls){
-  input <- brok_scrape(urls)
+library(dplyr)
+library(stringr)
 
+duster <- function(urls){
+  text <- brok_scrape(urls) |> unlist() |> str_replace_all("\n", " ")
+  ids <- create_id(urls)
+  df <- tibble(id = ids,
+               raw_url = urls,
+               raw_text = text)
+  df
 }
