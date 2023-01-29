@@ -8,7 +8,7 @@
 #' @export
 #'
 #' @examples
-#' duster(['https://www.cnn.com/world', 'https://www.foxnews.com/world', 'https://www.cbc.ca/news/world'])
+#' duster(c('https://www.cnn.com/world', 'https://www.foxnews.com/world', 'https://www.cbc.ca/news/world'))
 #'             url                                           raw_text
 #' id
 #' cnn1          https://www.cnn.com/world   World news - breaking news, video, headlines ...
@@ -16,5 +16,6 @@
 #' cbc1      https://www.cbc.ca/news/world  World - CBC NewsContentSkip to Main ContentAcc...
 
 duster <- function(urls){
-  #code to be written
+  input <- brok_scrape(urls)
+
 }
