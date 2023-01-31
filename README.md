@@ -6,8 +6,7 @@
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/UBC-MDS/BrokkR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/UBC-MDS/BrokkR/actions/workflows/R-CMD-check.yaml)
-curl -Os <https://uploader.codecov.io/latest/macos/codecov> chmod +x
-codecov ./codecov <!-- badges: end -->
+<!-- badges: end -->
 
 This package allows users to provide a list of URLs for webpages of
 interest and creates a dataframe with Bag of Words representation that
