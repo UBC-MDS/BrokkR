@@ -20,3 +20,7 @@ Imports:
     superml,
     testthat,
     tibble
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
