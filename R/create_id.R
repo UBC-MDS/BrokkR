@@ -10,6 +10,7 @@
 #' @examples
 #' urls <- c('https://www.reddit.com/r/nba/', 'https://www.reddit.com/r/nfl/', 'https://vancouver.craigslist.org/search/apa', 'https://www.kaggle.com/search?q=nba')
 #' create_id(urls)
+#' 'reddit  reddit.1  craigslist  kaggle'
 create_id <- function(urls){
   ids <- c()
   for (url in urls) {
