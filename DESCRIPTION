@@ -21,4 +21,8 @@ Imports:
     testthat,
     tibble
 Suggests: 
-    covr
+ci-cd
+    covr,
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
