@@ -17,6 +17,8 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 
+[![R-CMD-check](https://github.com/UBC-MDS/BrokkR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/UBC-MDS/BrokkR/actions/workflows/R-CMD-check.yaml)
+curl -Os https://uploader.codecov.io/latest/macos/codecov chmod +x codecov ./codecov
 <!-- badges: end -->
 
 This package allows users to provide a list of URLs for webpages of interest and creates a dataframe with Bag of Words representation that can then later be fed into a machine learning model of their choice. Users also have the option to produce a dataframe with just the raw text of their target webpages to apply the text representation of their choice instead.
@@ -48,6 +50,6 @@ devtools::install_github("UBC-MDS/BrokkR")
 This is a basic example which shows you how to solve a common problem:
 
 ```{r example}
-library(BrokkR)
+#library(BrokkR)
 ## basic example code
 ```

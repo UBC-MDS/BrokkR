@@ -28,4 +28,4 @@ test_that("output identifiers are unique", {
 #' Confirms the actual output matches the expected output of the function
 test_that("input and output vectors match", {
   expect_identical(expected, actual)
-})  
+})

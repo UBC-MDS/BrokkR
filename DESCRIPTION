@@ -20,3 +20,5 @@ Imports:
     superml,
     testthat,
     tibble
+Suggests: 
+    covr

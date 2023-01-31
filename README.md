@@ -4,7 +4,10 @@
 # BrokkR
 
 <!-- badges: start -->
-<!-- badges: end -->
+
+[![R-CMD-check](https://github.com/UBC-MDS/BrokkR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/UBC-MDS/BrokkR/actions/workflows/R-CMD-check.yaml)
+curl -Os <https://uploader.codecov.io/latest/macos/codecov> chmod +x
+codecov ./codecov <!-- badges: end -->
 
 This package allows users to provide a list of URLs for webpages of
 interest and creates a dataframe with Bag of Words representation that
@@ -29,15 +32,15 @@ token counts.
 
 ## Features
 
-The pymine package includes the following four functions:
+The BrokkR package includes the following four functions:
 
 - `create_id()`: Takes a character vector of webpage urls as an input
   and returns a character vector of unique identifiers for each webpage
   based on their url. The identifier is composed of the main webpage
   name and if multiple urls share the same parent webpage name, then the
   sequential ids are appended by a number.
-- `brok_scrape()` : Takes a vector of urls and using Rvest extracts the 
-  raw text from each and creates a list as an output. Polite was used to 
+- `brok_scrape()` : Takes a vector of urls and using Rvest extracts the
+  raw text from each and creates a list as an output. Polite was used to
   avoid being flagged as malicious during the scraping process.
 - `duster()`: Takes a vector of urls and uses the above two functions to
   create a tibble with the webpage identifiers as a index, the raw url,
@@ -60,6 +63,6 @@ devtools::install_github("UBC-MDS/BrokkR")
 This is a basic example which shows you how to solve a common problem:
 
 ``` r
-library(BrokkR)
+#library(BrokkR)
 ## basic example code
 ```
