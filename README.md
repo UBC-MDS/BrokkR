@@ -73,5 +73,7 @@ df_bow <- duster(urls)
 #> Test passed 🎉
 
 #if you want bag of words representation
-#df_bow <- duster(urls) |> bow()
+df_bow <- duster(urls) |> bow()
+
+df_bow
 ```
