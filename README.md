@@ -69,20 +69,39 @@ urls <- c('https://realpython.github.io/fake-jobs/jobs/energy-engineer-1.html', 
 
 #if you want the raw text only
 df_bow <- duster(urls)
-#> Test passed 😀
-#> Test passed 🥳
+#> Test passed 😸
+#> Test passed 🌈
 
 #if you want bag of words representation
 df_bow <- duster(urls) |> bow()
-#> Test passed 🎉
-#> Test passed 🥇
-df
-#> function (x, df1, df2, ncp, log = FALSE) 
-#> {
-#>     if (missing(ncp)) 
-#>         .Call(C_df, x, df1, df2, log)
-#>     else .Call(C_dnf, x, df1, df2, ncp, log)
-#> }
-#> <bytecode: 0x00000160da865160>
-#> <environment: namespace:stats>
+#> Test passed 🥳
+#> Test passed 😀
+df_bow
+#>         id
+#> 1   github
+#> 2 github.1
+#>                                                                  raw_url
+#> 1     https://realpython.github.io/fake-jobs/jobs/energy-engineer-1.html
+#> 2 https://realpython.github.io/fake-jobs/jobs/materials-engineer-24.html
+#>                                                                                                                                                                                                                                                                                                               raw_text
+#> 1                                     Fake Python  Fake Jobs for Your Web Scraping Journey  Energy engineer Vasquez-Davidson  Party prevent live. Quickly candidate change although. Together type music hospital. Every speech support time operation wear often.  Location: Christopherville, AA  Posted: 2021-04-08
+#> 2 Fake Python  Fake Jobs for Your Web Scraping Journey  Materials engineer Davis, Serrano and Cook  Approach great top series public none. Include air sort couple hold group but. Again identify real to follow so. Live teach movie I situation understand agree.  Location: South Tammyberg, AP  Posted: 2021-04-08
+#>   04 08 2021 aa agree air although ap approach candidate change
+#> 1  1  1    1  1     0   0        1  0        0         1      1
+#> 2  1  1    1  0     1   1        0  1        1         0      0
+#>   christopherville cook couple davidson davis energy engineer every fake follow
+#> 1                1    0      0        1     0      1        1     1    2      0
+#> 2                0    1      1        0     1      0        1     0    2      1
+#>   great group hold hospital identify include jobs journey live location
+#> 1     0     0    0        1        0       0    1       1    1        1
+#> 2     1     1    1        0        1       1    1       1    1        1
+#>   materials movie music none often operation party posted prevent public python
+#> 1         0     0     1    0     1         1     1      1       1      0      1
+#> 2         1     1     0    1     0         0     0      1       0      1      1
+#>   quickly real scraping series serrano situation sort south speech support
+#> 1       1    0        1      0       0         0    0     0      1       1
+#> 2       0    1        1      1       1         1    1     1      0       0
+#>   tammyberg teach time together top type understand vasquez wear web
+#> 1         0     0    1        1   0    1          0       1    1   1
+#> 2         1     1    0        0   1    0          1       0    0   1
 ```
