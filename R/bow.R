@@ -1,10 +1,13 @@
+#'  Bow
+#'
 #'  Converts the last column of the data frame to a bag of words and return it
-#'  alonge with other columns of the data frame.
+#'  along with other columns of the data frame.
 #'
 #' @param df a data frame with the last column of raw text
 #'
 #' @return a data frame which consists of the n-1 first columns of the input data frame as its n-1 first columns,
 #'         plus a bag of words out the input data frame in its following numerous columns.
+#' @export
 #'
 #' @examples
 #' df <- data.frame(
@@ -19,24 +22,24 @@
 #'              sure we have a sense of our strength, our culture, our stories."))
 #'
 #'  bow(df)
-#'  ===============================  ==========  ==============================
-#'              url                    url_id             text
-#'  ===============================  ==========  ==============================
+#'  "-------------------------------  ----------  ------------------------------
+#'              url                   url_id             text
+#'  -------------------------------  ----------  ------------------------------
 #'   https://www.cnn.com/world         cnn1       Instagram has a faster ...
 #'   https://www.foxnews.com/world     foxnew1    I would appear on Fox ...
 #'   https://www.cbc.ca/news/world     cbc1       CBC has a very important ...
 #'
-#'   ======== ====== ========     ====== ========= ======
+#'   -------- ------ -------     ------ --------- ------
 #'   appear   bind   canada  ...  tell	 twitter   want
-#'   ======== ====== ========     ====== ========= ======
+#'   -------- ------ -------     ------ --------- ------
 #'    0        0       0    ...     0       1        1
 #'    1        0       0    ...     0       0        0
-#'    0        1       1    ...     1       0        0
-
-
-library("superml")
+#'    0        1       1    ...     1       0        0"
 
 bow <- function(df) {
+  if(tibble::is.tibble(df)){
+    df <- as.data.frame(tibble)
+  }
   words <- superml::CountVectorizer$new()
   words_matrix <- words$fit_transform(df[ , ncol(df)])
   new_order <- sort(colnames(words_matrix))
