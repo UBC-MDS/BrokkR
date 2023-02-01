@@ -57,5 +57,4 @@ df_bow <- duster(urls)
 
 #if you want bag of words representation
 df_bow <- duster(urls) |> bow()
-df
 ```
