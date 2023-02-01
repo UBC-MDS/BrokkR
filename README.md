@@ -69,9 +69,20 @@ urls <- c('https://realpython.github.io/fake-jobs/jobs/energy-engineer-1.html', 
 
 #if you want the raw text only
 df_bow <- duster(urls)
-#> Test passed 🥇
-#> Test passed 🎉
+#> Test passed 😀
+#> Test passed 🥳
 
 #if you want bag of words representation
-#df_bow <- duster(urls) |> bow()
+df_bow <- duster(urls) |> bow()
+#> Test passed 🎉
+#> Test passed 🥇
+df
+#> function (x, df1, df2, ncp, log = FALSE) 
+#> {
+#>     if (missing(ncp)) 
+#>         .Call(C_df, x, df1, df2, log)
+#>     else .Call(C_dnf, x, df1, df2, ncp, log)
+#> }
+#> <bytecode: 0x00000160da865160>
+#> <environment: namespace:stats>
 ```
