@@ -37,7 +37,7 @@
 #'    0        1       1    ...     1       0        0"
 
 bow <- function(df) {
-  if(tibble::is.tibble(df)){
+  if(tibble::is_tibble(df)){
     df <- as.data.frame(df)
   }
   words <- superml::CountVectorizer$new()
