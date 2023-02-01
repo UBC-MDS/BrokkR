@@ -38,7 +38,7 @@
 
 bow <- function(df) {
   if(tibble::is.tibble(df)){
-    df <- as.data.frame(tibble)
+    df <- as.data.frame(df)
   }
   words <- superml::CountVectorizer$new()
   words_matrix <- words$fit_transform(df[ , ncol(df)])
