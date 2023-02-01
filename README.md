@@ -29,21 +29,23 @@ token counts.
 
 ## Features
 
-The pymine package includes the following four functions:
+The BrokkR package includes the following four functions:
 
-- `create_id()`: Takes a character vector of webpage urls as an input
-  and returns a character vector of unique identifiers for each webpage
-  based on their url. The identifier is composed of the main webpage
-  name and if multiple urls share the same parent webpage name, then the
-  sequential ids are appended by a number.
-- `brok_scrape()` : Takes a vector of urls and using Rvest extracts the 
-  raw text from each and creates a list as an output. Polite was used to 
-  avoid being flagged as malicious during the scraping process.
-- `duster()`: Takes a vector of urls and uses the above two functions to
-  create a tibble with the webpage identifiers as a index, the raw url,
-  and the raw text from the webpage with extra line breaks removed.
-- `bow()`: Takes a string text as an input and returns the vector of
-  unique words it contains.
+-   `create_id()`: Takes a character vector of webpage urls as an input
+    and returns a character vector of unique identifiers for each
+    webpage based on their url. The identifier is composed of the main
+    webpage name and if multiple urls share the same parent webpage
+    name, then the sequential ids are appended by a number.
+-   `brok_scrape()` : Takes a character vector of urls and using Rvest
+    extracts the raw text from each and creates a list as an output.
+    Polite was used to avoid being flagged as malicious during the
+    scraping process.
+-   `duster()`: Takes a character vector of urls and uses the above two
+    functions to create a tibble with the webpage identifiers, the raw
+    url, and the raw text from the webpage with extra line breaks
+    removed as columns.
+-   `bow()`: Takes a tibble as an input and returns the tibble with bag
+    of words represenation appended.
 
 ## Installation
 
@@ -57,9 +59,19 @@ devtools::install_github("UBC-MDS/BrokkR")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+To see a detailed example of the usage of this package, please see the
+vignette called “Example Usage” under the Articles Tab.
 
 ``` r
 library(BrokkR)
-## basic example code
+
+urls <- c('https://realpython.github.io/fake-jobs/jobs/energy-engineer-1.html', 'https://realpython.github.io/fake-jobs/jobs/materials-engineer-24.html')
+
+#if you want the raw text only
+df_bow <- duster(urls)
+#> Test passed 🥇
+#> Test passed 🎉
+
+#if you want bag of words representation
+#df_bow <- duster(urls) |> bow()
 ```

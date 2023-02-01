@@ -13,20 +13,20 @@ actual = bow(df)
 
 
 # unit tests
-test_that("last column of the input data frame should be string", {
-  expect_equal(typeof(df[,ncol(df)]), "character")
+testthat::test_that("last column of the input data frame should be string", {
+  testthat::expect_equal(typeof(df[,ncol(df)]), "character")
 })
 
-test_that("the row number of both output and input data frames should be the same", {
-  expect_equal(nrow(bow(df)), nrow(df))
+testthat::test_that("the row number of both output and input data frames should be the same", {
+  testthat::expect_equal(nrow(bow(df)), nrow(df))
 })
 
-test_that("the first m-1 columns of input and output data frames should be the same", {
-  expect_equal(bow(df)[,1:ncol(df)-1] , df[,1:ncol(df)-1])
+testthat::test_that("the first m-1 columns of input and output data frames should be the same", {
+  testthat::expect_equal(bow(df)[,1:ncol(df)-1] , df[,1:ncol(df)-1])
 })
 
-test_that("The output is not as expected!", {
-  expect_equal(bow(data.frame(
+testthat::test_that("The output is not as expected!", {
+  testthat::expect_equal(bow(data.frame(
     url = c("https://www.cnn.com/world",
             "https://www.foxnews.com/world",
             "https://www.cbc.ca/news/world"),
