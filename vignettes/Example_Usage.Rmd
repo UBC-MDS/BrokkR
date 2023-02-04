@@ -1,8 +1,8 @@
 ---
-title: "Example_Usage"
+title: "Example Usage"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Example_Usage}
+  %\VignetteIndexEntry{Example Usage}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
