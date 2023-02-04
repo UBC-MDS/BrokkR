@@ -82,16 +82,16 @@
 <div class="section level2">
 <h2 id="features">Features<a class="anchor" aria-label="anchor" href="#features"></a>
 </h2>
-<p>The pymine package includes the following four functions:</p>
+<p>The BrokkR package includes the following four functions:</p>
 <ul>
 <li>
 <code><a href="reference/create_id.html">create_id()</a></code>: Takes a character vector of webpage urls as an input and returns a character vector of unique identifiers for each webpage based on their url. The identifier is composed of the main webpage name and if multiple urls share the same parent webpage name, then the sequential ids are appended by a number.</li>
 <li>
-<code>brok_scrape()</code> : Takes a vector of urls and using Rvest extracts the raw text from each and creates a list as an output. Polite was used to avoid being flagged as malicious during the scraping process.</li>
+<code><a href="reference/brok_scrape.html">brok_scrape()</a></code> : Takes a character vector of urls and using Rvest extracts the raw text from each and creates a list as an output. Polite was used to avoid being flagged as malicious during the scraping process.</li>
 <li>
-<code>duster()</code>: Takes a vector of urls and uses the above two functions to create a tibble with the webpage identifiers as a index, the raw url, and the raw text from the webpage with extra line breaks removed.</li>
+<code><a href="reference/duster.html">duster()</a></code>: Takes a character vector of urls and uses the above two functions to create a tibble with the webpage identifiers, the raw url, and the raw text from the webpage with extra line breaks removed as columns.</li>
 <li>
-<code>bow()</code>: Takes a string text as an input and returns the vector of unique words it contains.</li>
+<code><a href="reference/bow.html">bow()</a></code>: Takes a tibble as an input and returns the tibble with bag of words represenation appended.</li>
 </ul>
 </div>
 <div class="section level2">
@@ -105,10 +105,21 @@
 <div class="section level2">
 <h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
 </h2>
-<p>This is a basic example which shows you how to solve a common problem:</p>
+<p>To see a detailed example of the usage of this package, please see the vignette called “Example Usage” under the Articles Tab.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">BrokkR</span><span class="op">)</span></span>
-<span><span class="co">## basic example code</span></span></code></pre></div>
+<span></span>
+<span><span class="va">urls</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'https://realpython.github.io/fake-jobs/jobs/energy-engineer-1.html'</span>, <span class="st">'https://realpython.github.io/fake-jobs/jobs/materials-engineer-24.html'</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">#if you want the raw text only</span></span>
+<span><span class="va">df_bow</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/duster.html">duster</a></span><span class="op">(</span><span class="va">urls</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Test passed 🥳</span></span>
+<span><span class="co">#&gt; Test passed 🥳</span></span>
+<span></span>
+<span><span class="co">#if you want bag of words representation</span></span>
+<span><span class="va">df_bow</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/duster.html">duster</a></span><span class="op">(</span><span class="va">urls</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="reference/bow.html">bow</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Test passed 😀</span></span>
+<span><span class="co">#&gt; Test passed 😀</span></span></code></pre></div>
 </div>
 </div>
   </div>
@@ -157,7 +168,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer>

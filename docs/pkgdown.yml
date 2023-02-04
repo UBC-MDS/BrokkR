@@ -1,7 +1,7 @@
 pandoc: '2.18'
-pkgdown: 2.0.7
+pkgdown: 2.0.6
 pkgdown_sha: ~
 articles:
   Example_Usage: Example_Usage.html
-last_built: 2023-01-31T22:40Z
+last_built: 2023-02-04T02:32Z
 
