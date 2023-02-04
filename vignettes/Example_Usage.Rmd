@@ -14,6 +14,83 @@ knitr::opts_chunk$set(
 )
 ```
 
+`BrokkR` package allows users to provide a list of URLs for webpages of interest and creates a dataframe with Bag of Words representation that can then later be fed into a machine learning model of their choice. Users also have the option to produce a dataframe with just the raw text of their target webpages to apply the text representation of their choice instead.
+
+This notebook gives an example on how to use `BrokkR` in a project.
+
+In this example we start with a selection of a few top universities in Canada, and:
+
+
+Function                input                      output   
+--------------         ----------------         -------------------------- 
+`create_id()`           a list of url's          a list of unique url_id's
+`brok_scrape()`         a list of url's          a list of scraped raw text
+`duster()`              a list of url's          a list where the outputs of `create_id()` and `brok_scrape()` are concatonated
+`bow()`                 the output of `duster()` a list of bag of words appended to the input list.
+
+# List of url's
+Here is the list of university urls that will be used in this example:
+
+  - University of Toronto: https://www.utoronto.ca/
+  - University of British Columbia: https://www.ubc.ca/
+  - McGill University: https://www.mcgill.ca/
+  - Queen's University: https://www.queensu.ca/
+  
+
+# Imports
+
 ```{r setup}
 library(BrokkR)
 ```
+
+
+
+# Example input
+
+According to the list of universities mentioned above, here is a sample input we need for some functions in this package:
+
+```{r}
+urls <-c('https://www.utoronto.ca/',
+         'https://www.ubc.ca/',
+         'https://www.mcgill.ca/',
+         'https://www.queensu.ca/')
+```
+
+# `create_id()`
+
+## Create unique ID's for a list of urls.
+
+```{r}
+url_ids <- create_id(urls)
+url_ids
+```
+
+# `brok_scrape():`
+
+Create a list of outputs which consist the raw text of webpages listed in the input.
+
+```{r}
+list_rawtext <- brok_scrape(urls)
+list_rawtext[[1]]
+```
+
+# `duster()`
+
+## Create a list out of the outputs of `create_id()` and `brok_scrape()`
+
+```{r}
+duster_list <- duster(urls)
+duster_list
+```
+# `bow()`
+
+## Create a list of bag of words appended to the input dataframe.
+
+```{r}
+bag_of_words <- bow(duster_list)
+
+library(dplyr)
+select(bag_of_words, starts_with("ne"))
+```
+
+The `bag_of_words` is going to be a slightly well-shaped list which we always need to start with in our machine learning projects.
